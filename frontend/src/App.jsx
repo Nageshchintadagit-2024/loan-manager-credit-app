@@ -33,7 +33,7 @@ const App =() => {
   if (isCheckingAuth && !authUser){
     return (
       <div >
-        <h1>Loading...</h1>
+        <h1>Loading ,It seems like the app is taking around 10 to 15 seconds to load... </h1>
       </div>
     )
   }
