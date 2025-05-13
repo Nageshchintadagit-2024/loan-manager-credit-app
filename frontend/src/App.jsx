@@ -6,6 +6,10 @@ import { ToastContainer } from 'react-toastify';
 
 import {Routes, Route, Navigate} from 'react-router-dom';
 
+
+import { ClipLoader } from 'react-spinners';
+
+
 import { useAuthStore } from './store/useAuthStore';
 import UserPage from './pages/UserPage/UserPage';
 import AdminPage from './pages/AdminPage/AdminPage';
@@ -14,9 +18,10 @@ import LoginPage from './pages/LoginPage';
 
 import SignupPage from './pages/SignupPage';
 
-import HomePage from './pages/HomePage';
 
 import VerifierPage from './pages/VerifierPage/VerifierPage';
+
+import "./index.css"
 
 const App =() => {
   const {authUser, isCheckingAuth, checkAuth} = useAuthStore();
@@ -32,8 +37,9 @@ const App =() => {
 
   if (isCheckingAuth && !authUser){
     return (
-      <div >
-        <h1>Loading ,It seems like the app is taking around 10 to 15 seconds to load... </h1>
+      <div className='loader-container'>
+        <h1 className='loader-heading'>Please Wait ,It seems like the app is taking around 10 to 15 seconds to load... </h1>
+        <ClipLoader color="#123abc" size={50} />;
       </div>
     )
   }
