@@ -136,7 +136,9 @@ console.log(cashRecieved, cashDisbursed, savings, borrowersCount)
     const loanApplication = loanApplicationsData.find((application) => application._id === id);
     if (action === "Approved") {
       approveLoanAmount(id,loanApplication.amount);
-      toast.success("Loan Approved Successfully");
+      toast.success("Loan Approved Successfully",{
+        position:'bottom-right'
+      });
     }
   } 
 
@@ -161,7 +163,7 @@ console.log(cashRecieved, cashDisbursed, savings, borrowersCount)
  }
 
  const handleAction = async (action) => {
-    await onUpdateApproveStatus(visibleId, action);
+    onUpdateApproveStatus(visibleId, action);
      setVisibleId(null);
      console.log(action)
  }

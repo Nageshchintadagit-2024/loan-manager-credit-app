@@ -29,7 +29,9 @@ export const useAuthStore = create((set, get) => ({
     try {
       const res = await axiosInstance.post("/auth/signup", data);
       set({ authUser: res.data });
-      toast.success("Account created successfully");
+      toast.success("Account created successfully", {
+        position:'bottom-right'
+      });
     } catch (error) {
       console.log("Error fetching sigup controller:", error);
     } finally {
@@ -42,7 +44,9 @@ export const useAuthStore = create((set, get) => ({
     try {
       const res = await axiosInstance.post("/auth/login", data);
       set({ authUser: res.data });
-      toast.success("Logged in successfully");
+      toast.success("Logged in successfully", {
+        position:'bottom-right'
+      });
 
     } catch (error) {
       console.log("Error fetching login controller:", error);
@@ -55,7 +59,9 @@ export const useAuthStore = create((set, get) => ({
     try {
       await axiosInstance.post("/auth/logout");
       set({ authUser: null });
-      toast.success("Logged out successfully");
+      toast.success("Logged out successfully",{
+        position:'bottom-right'
+      });
     } catch (error) {
       console.log("Error fetching logout controller:", error);
     }
