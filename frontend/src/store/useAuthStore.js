@@ -34,6 +34,7 @@ export const useAuthStore = create((set, get) => ({
       });
     } catch (error) {
       console.log("Error fetching sigup controller:", error);
+      toast.error(error.response.data.message)
     } finally {
       set({ isSigningUp: false });
     }
@@ -50,6 +51,7 @@ export const useAuthStore = create((set, get) => ({
 
     } catch (error) {
       console.log("Error fetching login controller:", error);
+      toast.error(error.response.data.message)
     } finally {
       set({ isLoggingIn: false });
     }
