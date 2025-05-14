@@ -111,8 +111,26 @@ padding: 15px 0;
 }
 
 .approved {
-  background-color: #b9f6ca; /* Light Green */
-  color: #00c853; /* Dark Green */
+ /* Light Green */
+  color: white;
+  font-size:0.7rem;
+   /* Dark Green */
+}
+
+.loan-status{
+  width:70px;
+  height:34px;
+  border-radius: 8px;
+  border: none;
+  color:white;
+  font-size:0.6rem;
+}
+
+
+.show-button-container{
+  display: flex;
+  align-items: center;
+  width:100%;
 }
 
 .show-button {
@@ -122,9 +140,9 @@ padding: 15px 0;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   transition: background-color 0.3s ease;
-  margin-left:16px;
+  margin-left:10px;
 }
 
 .followButton:hover {

@@ -3,8 +3,10 @@
     display: flex;
     flex-direction: column;
     background-color: #132E1A;
-     background-size: cover;
-     margin-top:130px;
+    background-size: cover;
+    margin-top:650px;
+    min-height:200vh;
+
 }
 
 .dashboard-profile-container{

@@ -172,7 +172,6 @@ console.log(cashRecieved, cashDisbursed, savings, borrowersCount)
   return (
     <div className='show-button-container'>
       <button onClick={() => handleAction('Approved')} className="show-button1">Approve</button>
-      <button onClick={() => handleAction('Rejected')} className="show-button1">Reject</button>
     </div>
   )
  }

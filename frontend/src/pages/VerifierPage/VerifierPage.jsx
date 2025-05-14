@@ -107,8 +107,7 @@ const VerifierPage = () => {
   }
 
   const onUpdateStatus = async (id, action) => {  
-    const updatedAction = action === 'Pending' ? 'Verified' : 'Pending';
-    await updateLoanApplicationStatus(id, updatedAction);
+    await updateLoanApplicationStatus(id, action);
     console.log(id,action)
   } 
 
@@ -134,19 +133,17 @@ const VerifierPage = () => {
 
  }
 
- const onClickVerify = (id,action) => {
-    onUpdateStatus(id,action);
+ const onClickVerify = (action) => {
+    onUpdateStatus(visibleId,action);
     setVisibleId(null);
 
  }
 
- const onDisplayShowButton = (id, action) => {
-  const clickVerify = () => {
-    onClickVerify(id, action);
-  }
+ const onDisplayShowButton = () => {
   return (
-    <div>
-      <button onClick={clickVerify} className="show-button">Verify</button>
+    <div className='show-button-container'>
+      <button onClick={() => onClickVerify('Verified')} className="show-button">Verify</button>
+      <button onClick={() => onClickVerify('Rejected')} className="show-button">Reject</button>
     </div>
   )
  }
@@ -190,15 +187,14 @@ const VerifierPage = () => {
             </div>
             
     
-            {loanApplication.action === 'Pending' ? <button className="action-button pending-button">{loanApplication.action}</button>:
-             <button className=" action-button verified-button">{loanApplication.action}</button>}
+            <button className={` loan-status ${loanApplication.action}`}>{loanApplication.action}</button>
              <span>
               <div className="status-button">
                 <button onClick={onClickDots} className='status-button'>
                 <BiDotsVerticalRounded className="follow-icon" />
                 
               </button>
-              {showVerify && onDisplayShowButton(_id, action)}
+              {(showVerify && action !=='Approved') && onDisplayShowButton()}
               </div>
              </span>
           </li>
