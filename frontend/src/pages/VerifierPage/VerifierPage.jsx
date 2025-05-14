@@ -9,14 +9,6 @@ import { FaUserCircle } from 'react-icons/fa';
 import { BiDotsVerticalRounded } from "react-icons/bi";
 
 
-
-
-
-
-
-
-
-
 const VerifierPage = () => {
   const {authUser, logout} = useAuthStore();
   const {getLoanApllications, loanApplicationsData,updateLoanApplicationStatus} = useApplicationStore();
@@ -100,7 +92,7 @@ const VerifierPage = () => {
 
   
 
-  console.log(loanApplicationsData);
+  
 
   const handleLogout = () => {
     logout();
